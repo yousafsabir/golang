@@ -75,4 +75,10 @@ World`
 	var myBoolean bool = true
 	fmt.Println(myBoolean)
 	myBoolean = false
+
+	// Default Values
+	// If variable not initialised, Go sets
+	// 0 for all ints, uints, floats & runes
+	// '' for strings
+	// false for booleans
 }

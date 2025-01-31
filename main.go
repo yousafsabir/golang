@@ -135,7 +135,6 @@ World`
 		fmt.Println("The Division was close")
 	default:
 		fmt.Println("The Division was not close")
-
 	}
 }
 

@@ -18,7 +18,6 @@ import (
 	"fmt"
 	"go_tutorial/package_1"
 	"unicode/utf8"
-	"utf8"
 )
 
 func main() {
@@ -102,4 +101,25 @@ World`
 	// They can't be declared uninitialised
 	const myConst = "a constant"
 	fmt.Println(myConst)
+
+	printMe("Hello")
+
+	var result, reminder = intDivisionWithReminder(5, 3)
+	fmt.Printf("Result is %v & the reminder is %v", result, reminder)
+}
+
+// Functions
+// are declared with func keyword
+func printMe(printVal string) {
+	fmt.Println("Function Printed")
+	fmt.Println(printVal)
+}
+
+func intDivision(numerator int, denominator int) int {
+	return numerator / denominator
+}
+
+// can also return multiple value at once
+func intDivisionWithReminder(numerator int, denominator int) (int, int) {
+	return numerator / denominator, numerator % denominator
 }

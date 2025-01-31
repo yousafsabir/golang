@@ -95,4 +95,11 @@ World`
 	num3, num4 := 3, 4
 
 	fmt.Println(num1, num2, num3, num4)
+
+	// Constants
+	// constants are declared the same way as variables except
+	// Their value can't be changed later (obviosly)
+	// They can't be declared uninitialised
+	const myConst = "a constant"
+	fmt.Println(myConst)
 }

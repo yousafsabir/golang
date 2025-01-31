@@ -81,4 +81,18 @@ World`
 	// 0 for all ints, uints, floats & runes
 	// '' for strings
 	// false for booleans
+
+	// Short Hand Declaration
+	// we can omit the type if we initilise a variable on its creation
+	// Go will automatically infer its type
+	var myString2 = "HelloWorld"
+	fmt.Println(myString2)
+	// Or we can drop the var keyword & type together with := operator
+	myString3 := "Hello World"
+	fmt.Println(myString3)
+	// we can also declare multiple vars in one line
+	var num1, num2 = 1, 2
+	num3, num4 := 3, 4
+
+	fmt.Println(num1, num2, num3, num4)
 }

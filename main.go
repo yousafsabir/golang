@@ -15,6 +15,7 @@ package main
 // 				Just like this module is named go_tutorial
 
 import (
+	"errors"
 	"fmt"
 	"go_tutorial/package_1"
 	"unicode/utf8"
@@ -104,8 +105,38 @@ World`
 
 	printMe("Hello")
 
-	var result, reminder = intDivisionWithReminder(5, 3)
-	fmt.Printf("Result is %v & the reminder is %v", result, reminder)
+	var result, reminder, error = intDivisionWithReminder(5, 3)
+
+	// Control Structures
+	// If Else
+	if error != nil {
+		fmt.Printf(error.Error())
+	} else if reminder == 0 {
+		fmt.Printf("Result is %v", result)
+	} else {
+		fmt.Printf("Result is %v & the reminder is %v", result, reminder)
+	}
+	// Switch Case
+	switch {
+	case error != nil:
+		fmt.Printf(error.Error())
+	case reminder == 0:
+		fmt.Printf("Result is %v", result)
+	default:
+		fmt.Printf("Result is %v & the reminder is %v", result, reminder)
+
+	}
+	// Conditional Switch Case
+	// Applies on a specific value
+	switch reminder {
+	case 0:
+		fmt.Println("The Division was exact")
+	case 1, 2:
+		fmt.Println("The Division was close")
+	default:
+		fmt.Println("The Division was not close")
+
+	}
 }
 
 // Functions
@@ -120,6 +151,17 @@ func intDivision(numerator int, denominator int) int {
 }
 
 // can also return multiple value at once
-func intDivisionWithReminder(numerator int, denominator int) (int, int) {
-	return numerator / denominator, numerator % denominator
+func intDivisionWithReminder(numerator int, denominator int) (int, int, error) {
+	// if denominator is 0, then we get an error
+	// we have to check if denominator is 0
+	// and return the error if it's 0
+	var err error // default value: nil
+	if denominator == 0 {
+		err = errors.New("Cannot Divide by Zero")
+		// Notice that we do have to return some value for
+		// result & the reminder
+		return 0, 0, err
+	}
+	// err is nil here
+	return numerator / denominator, numerator % denominator, err
 }

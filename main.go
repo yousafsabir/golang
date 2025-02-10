@@ -162,6 +162,39 @@ World`
 	fmt.Println(&intArr[0])
 	fmt.Println(&intArr[1])
 	fmt.Println(&intArr[2])
+
+	// Slices:
+	// wrapper around arrays to provide more general, powerful & convenient
+	// interface to them.
+	// omitting the length value & we have a slice
+	var intSlice []int32 = []int32{1, 2, 3}
+	fmt.Println(intSlice)
+	// We can append to slices like this
+	intSlice = append(intSlice, 4)
+	// as items in arrays are contiguous, so to have a new element
+	// along with previous elements contiguously, append() creates new array
+	// and returns it. that we can store in the same var
+	fmt.Printf("The Length of intSlice: %v\n", len(intSlice))
+	fmt.Printf("The Capacity of intSlice: %v", cap(intSlice))
+	// we have our slice like this
+	// /--- Capacity ---\
+	// [1, 2, 3, 4, *, *]
+	// \-Length -/
+	// So the capacity is like total space a slice has acquired at a
+	// given time. We can't access elements out of length though
+
+	// We can intialize another slice and specify its length
+	// & capacity together with make() method
+	intSlice2 := make([]int32, 3, 5)
+	fmt.Println(intSlice2)
+	// specifying capacity beforehand ensures that the underlying array
+	// isn't reallocated each time a new element is added
+	// reallocation of arrays slows down the app
+
+	// Since append() accepts multiple arguments,
+	// We can spread another slice like this
+	intSlice3 := []int32{4, 5, 6}
+	intSlice3 = append(intSlice3, intSlice...)
 }
 
 // Functions

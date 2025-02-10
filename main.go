@@ -136,6 +136,32 @@ World`
 	default:
 		fmt.Println("The Division was not close")
 	}
+
+	// Advanced Data Structures (Arrays, Slices & Maps)
+	// Arrays:
+	// - Fixed Length
+	// - Same Type
+	// - Indexable
+	// - Contiguous Location in Memory
+	var intArr [3]int32
+	// It has intialized intArr with 3 zeroes: [0, 0, 0]
+	// Or we can initialize it with values
+	intArr = [3]int32{1, 2, 3}
+	// the shorthand intialization will be
+	intArr2 := [3]int32{4, 5, 6}
+	// or we can also omit the number of elements
+	intArr3 := [...]int32{7, 8, 9}
+
+	// Elements can be accessed just like everywhere else
+	fmt.Println(intArr[0])
+	fmt.Println(intArr2[1:3])
+	fmt.Println(intArr3[2:3])
+	// Assign new value to an index
+	intArr[0] = 123
+	// Access the memory location of a variable with ampersand &
+	fmt.Println(&intArr[0])
+	fmt.Println(&intArr[1])
+	fmt.Println(&intArr[2])
 }
 
 // Functions

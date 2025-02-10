@@ -195,6 +195,26 @@ World`
 	// We can spread another slice like this
 	intSlice3 := []int32{4, 5, 6}
 	intSlice3 = append(intSlice3, intSlice...)
+
+	// Maps
+	// key value pair data type
+	var myMap map[string]int8 = map[string]int8{"Yousaf": 21, "Ahsan": 19}
+	fmt.Println(myMap["Yousaf"])
+	// if a key is not present in map, it'll return default value for the
+	// data type. 0 for int8
+	fmt.Println(myMap["Ismail"])
+	// Accessing a key in map returns two values. First the value itself.
+	// second a boolean, true if the key was present
+	var val, ok = myMap["Yousaf"]
+
+	if ok {
+		fmt.Printf("Age is: %v", val)
+	} else {
+		fmt.Println("Key not present in map")
+	}
+
+	// And we can delete a key in map using built-in delete()
+	delete(myMap, "Ahsan")
 }
 
 // Functions

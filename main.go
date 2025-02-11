@@ -215,6 +215,35 @@ World`
 
 	// And we can delete a key in map using built-in delete()
 	delete(myMap, "Ahsan")
+
+	// Loops
+	// Traditional for loop can be implemented as such
+	for i := 0; i <= 10; i++ {
+		fmt.Println(i)
+	}
+	// Slices & Maps can be iterated over using range keyword
+	for index, value := range intArr {
+		fmt.Println(index, value)
+	}
+	for name, age := range myMap {
+		fmt.Printf("%v is %v years old\n", name, age)
+	}
+	// go just has for loop. But while loop can be implemented using
+	// only for loop
+	loopIdx := 0
+	for loopIdx <= 10 {
+		fmt.Println(loopIdx)
+		loopIdx++
+	}
+	// Break keyword is used to stop the loop
+	for {
+		if loopIdx >= 20 {
+			break
+		}
+		loopIdx++
+	}
+	// The above one can be an infinite loop if break keyword
+	// is not used
 }
 
 // Functions

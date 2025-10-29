@@ -244,6 +244,9 @@ World`
 	}
 	// The above one can be an infinite loop if break keyword
 	// is not used
+
+	// Strings deep dive
+	StringsDeepDive()
 }
 
 // Functions
